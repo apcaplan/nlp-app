@@ -6,6 +6,7 @@ function handleSubmit(event) {
   // check what text was put into the form field
   let formText = document.getElementById("url").value;
 
+  // check Url
   if (checkUrl(formText)) {
     document.querySelector(".error").classList.remove("show");
     console.log("::: Form Submitted :::");
