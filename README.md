@@ -23,4 +23,4 @@ To use this app locally, clone this repo. Then install dependencies with `npm in
 Once you have a key, create an .env file in the root directory and add your Aylien API key there. A model (without key) is included in .sample-env for easy reference. Simply add your id and key after the respective equals signs.
 
 ## About
-I built this app to practice working with Web APIs, asynchronous code, and build tools. The app uses Aylien API to analyze a text or blog post and dynamically updates UI with various attributes of that text, baseds on user input.
+I built this app to practice working with Web APIs, asynchronous code, and build tools. The app uses Aylien API to analyze a text or blog post and dynamically updates UI with various attributes of that text, based on user input.
