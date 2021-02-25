@@ -1,0 +1,59 @@
+#hashtags,
+#polarity,
+#subjectivity,
+#text {
+  margin: 0.6rem 0 1.5rem 1rem;
+}
+
+.hashtags {
+  display: none;
+}
+
+.hashtags,
+.polarity,
+.subjectivity,
+.text {
+  padding: 0 1rem;
+}
+
+.polarity {
+  display: none;
+}
+
+.results {
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+  color: #000;
+  display: none;
+  justify-content: center;
+  padding: 1rem;
+  width: 600px;
+}
+
+.results h2 {
+  font-weight: bold;
+  margin: 1rem;
+  text-align: center;
+}
+
+.show {
+  display: block;
+}
+
+.subjectivity {
+  display: none;
+}
+
+@media (max-width: 45em) {
+  .tabs .tab,
+  .tabs label {
+    order: initial;
+  }
+
+  .tabs label {
+    margin-right: 0;
+    margin-top: 0.2rem;
+    width: 100%;
+  }
+}

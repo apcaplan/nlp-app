@@ -1,12 +1,89 @@
 form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
+  padding: 40px;
 }
 
-input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+form input {
+  padding: 5px 20px;
+  width: 100%;
+  line-height: 16px;
+  margin: 10px 0;
+}
+
+form textarea {
+  padding: 5px 20px;
+  width: 100%;
+  line-height: 16px;
+  margin: 10px 0;
+}
+
+input[type="submit"] {
+  float: right;
+  margin-right: 2rem;
+  text-align: center;
+  width: 25%;
+}
+
+.error {
+  color: red;
+  display: none;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 30px;
+  width: 600px;
+}
+
+.tabs label {
+  background: #90caf9;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  height: 100px;
+  // put label first
+  order: 1;
+  padding: 1rem 2rem;
+  text-align: center;
+  transition: background ease 0.2s;
+  width: 50%;
+}
+
+.tabs .tab {
+  background: #fff;
+  border-radius: 30px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+  color: #000;
+  display: none;
+  flex-grow: 1;
+  height: auto;
+  margin-bottom: 50px;
+  margin-top: -50px;
+  // put tabs last
+  order: 99;
+  padding: 1rem;
+  width: 450px;
+  z-index: 1000;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs input[type="radio"]:checked + label {
+  background: #fff;
+  color: #000;
+}
+
+.tabs input[type="radio"]:checked + label + .tab {
+  display: block;
+}
+
+.tabs input[type="submit"] {
+  // background-color: #90CAF9;
+  // border-style: solid;
 }

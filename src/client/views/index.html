@@ -1,43 +1,69 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Text Analyzer</title>
+  </head>
 
-    <body>
+  <body>
+    <header>
+      <h1>Text Analyzer</h1>
+      <h3>Simply enter text or url where the text is located and click submit to analyze!</h3>
+    </header>
+    <main>
+      <section class="tabs">
+        <input type="radio" name="tabs" id="url-tab" checked="checked" />
+        <label for="url-tab">Url</label>
+        <div class="tab">
+          <form class="url-tab" onsubmit="return Client.handleSubmit(event)">
+            <input id="url" type="url" name="url" placeholder="Enter URL here" required />
+            <input type="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)" />
+          </form>
+          <span class="error">Please eneter a valid url</span>
+        </div>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+        <input type="radio" name="tabs" id="text-tab" />
+        <label for="text-tab">Text</label>
+        <div class="tab">
+          <form class="text-tab" onsubmit="return Client.textSubmit(event)">
+            <textarea id="words" type="text" name="input" placeholder="Enter text here" rows="4"></textarea>
+            <input type="submit" value="submit" onclick="return Client.textSubmit(event)" onsubmit="return textSubmit(event)" />
+          </form>
+        </div>
+      </section>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
-            <section>
+      <section class="results">
+        <h2>Analysis</h2>
+        <div class="text">
+          <p>Text:</p>
+          <div id="text"></div>
+        </div>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
+        <div class="subjectivity">
+          <p>This text is subjectively:</p>
+          <div id="subjectivity"></div>
+        </div>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
+        <div class="polarity">
+          <p>Author's tone:</p>
+          <div id="polarity"></div>
+        </div>
 
-    </body>
+        <div class="hashtags">
+          <p>Possible hashtags for this text:</p>
+          <div id="hashtags"></div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load preformat
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  </body>
 </html>
