@@ -26,7 +26,7 @@ function handleSubmit(event) {
         document.querySelector(".results").classList.add("show");
         document.getElementById("text").innerHTML = res.results[0].result.article;
 
-        document.getElementById("hashtags").innerHTML = res.results[1].result.hashtags;
+        document.getElementById("hashtags").innerHTML = res.results[1].result.hashtags.join(", ");
         if (res.results[1].result.hashtags && res.results[1].result.hashtags !== "unknown") {
           document.querySelector(".hashtags").classList.add("show");
         }
